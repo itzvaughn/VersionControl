@@ -5,13 +5,14 @@ void setup(){
  particles = new ArrayList<Particle>();
 }
 
-void draw(){
+void draw() {
   background(0);
-  for (int i = 0; i < particles.size(); i++){
+  for (int i = 0; i < particles.size(); i++) {
     particles.get(i).update();
     particles.get(i).display();
   }
-  if(mousePressed == true) {
-    particles.add(new Particle(mouseX, mouseY));
+  if (mousePressed) {
+    color randomColor = color(random(255), random(255), random(255));
+    particles.add(new Particle(mouseX, mouseY, randomColor));
   }
 }
